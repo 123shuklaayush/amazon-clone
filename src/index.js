@@ -4,8 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from '@auth0/auth0-react';
+import { CounterProvider } from './context/Counter';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <CounterProvider>
   <Auth0Provider
   domain="dev-olwqq1xmhbrc1jqx.us.auth0.com"
     clientId="VsIP9p0N5gWJFUykUba9GnviZyBe5iRF"
@@ -15,6 +17,7 @@ root.render(
   >
     <App />
   </Auth0Provider>
+  </CounterProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
