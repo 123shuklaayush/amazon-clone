@@ -1,30 +1,30 @@
-import React, { useContext } from 'react'
+import React from 'react';
 import "../cssFile/Product.css";
-import { CounterContext } from '../context/Counter';
 
-function Product({ title, image, price, rating}) {
-  const counterContext = useContext(CounterContext);
+function Product({ title, image, price, rating, addToCart }) {
+  const handleClick = () => {
+    addToCart({ title, image, price, rating });
+  };
   return (
-      <div className="product">
-        <div className="product-info">
-            <p> {title} </p>
-            <p className="product-price">
-                <small><b>$</b></small>
-                <strong>{price}</strong>
-            </p>
-            <div className="product-rating">
-                {Array(rating)
-                .fill()
-                .map((_, i) => (
-                <p>⭐</p> 
-                ))}
-            </div>
+    <div className="product">
+      <div className="product-info">
+        <p>{title}</p>
+        <p className="product-price">
+          <small><b>$</b></small>
+          <strong>{price}</strong>
+        </p>
+        <div className="product-rating">
+          {Array(rating)
+            .fill()
+            .map((_, i) => (
+              <p key={i}>⭐</p>
+          ))}
         </div>
-
-        <img src= {image} alt="book" />
-        <button onClick={() => counterContext.setCount(counterContext.count + 1)}>Add to Basket</button>
       </div>
-  )
+      <img src={image} alt="book" />
+      <button onClick={handleClick}>Add to Basket</button>
+    </div>
+  );
 }
 
-export default Product
+export default Product;

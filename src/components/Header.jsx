@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react';
 import "../cssFile/Header.css";
-import amazonLogo from "../img/amazon-logo.png"; // Importing logo for header
+import amazonLogo from "../img/amazon-logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { CounterContext } from "../context/Counter";
 
-function Header() {
+function Header({ cartCount }) {
   const counterContext = useContext(CounterContext);
   const { loginWithRedirect, isAuthenticated, logout, user } = useAuth0();
 
@@ -22,19 +22,16 @@ function Header() {
       </div>
 
       {isAuthenticated ? (
-      <div className="header-option" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
-        <span className="header-onLineOne"> Hello {user.name}</span>
-        <span className="header-onLineTwo">Sign Out</span>
-      </div>
+        <div className="header-option" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+          <span className="header-onLineOne">Hello {user.name}</span>
+          <span className="header-onLineTwo">Sign Out</span>
+        </div>
       ) : (
-      <div className="header-option" onClick={() => loginWithRedirect()}>
-        <span className="header-onLineOne"> Hello Guest</span>
-        <span className="header-onLineTwo">Sign in</span>
-      </div>
+        <div className="header-option" onClick={() => loginWithRedirect()}>
+          <span className="header-onLineOne">Hello Guest</span>
+          <span className="header-onLineTwo">Sign in</span>
+        </div>
       )}
-
-
-
 
       <div className="header-option">
         <span className="header-onLineOne">Returns</span>
@@ -48,7 +45,7 @@ function Header() {
       <Link to="/checkout">
         <div className="header-optionBasket">
           <ShoppingBasketIcon />
-          <span className="header-onLineTwo header-basketCount">{counterContext.count}</span>
+          <span className="header-onLineTwo header-basketCount">{cartCount}</span> {/* Display the cartCount */}
         </div>
       </Link>
     </div>

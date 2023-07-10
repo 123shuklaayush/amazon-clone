@@ -60,4 +60,10 @@
 .header-basketCount{
     margin-left: 10px;
     margin-right: 10px;
+    position: relative;
+    top: -15px;
+    background-color: red;
+    border-radius: 2px;
+    padding: 1px;
+    left: -10px;
 }
