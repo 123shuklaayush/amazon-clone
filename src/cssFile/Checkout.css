@@ -1,6 +1,29 @@
+.checkout-img{
+    overflow: hidden;
+    width: 100%;
+}
 .checkout{
     display: flex;
-    padding: 20px;
+    justify-content: space-around;
+}
+.checkout-right{
+    width: 20%;
     background-color: white;
-    height: max-content;
+    margin: 150px 20px;
+    height: 8rem;
+    border-radius: 10px;
+    border: 2px;
+    padding: 10px;
+    
+}
+.checkout-btn{
+    overflow: hidden;
+    background-color:#f7ca00;
+    border: none;
+    border-color: #a88734 #9c7331 #846a29; 
+    border-radius:13px;
+    height: 30px;
+    width: 9rem;
+    margin: 10px;
+    cursor: pointer;
 }

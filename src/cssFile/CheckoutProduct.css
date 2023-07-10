@@ -1,0 +1,11 @@
+.item-name{
+    display: flex;
+    width: 90%;
+    background-color: white;
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+.description-of-item{
+    padding: 20px;
+    line-height: 30px;
+}

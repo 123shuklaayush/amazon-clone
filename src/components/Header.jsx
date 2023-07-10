@@ -48,7 +48,7 @@ function Header() {
       <Link to="/checkout">
         <div className="header-optionBasket">
           <ShoppingBasketIcon />
-          <span className="header-onLineTwo header-basketCount">{counterContext.countl}</span>
+          <span className="header-onLineTwo header-basketCount">{counterContext.count}</span>
         </div>
       </Link>
     </div>

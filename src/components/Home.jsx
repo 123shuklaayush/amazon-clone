@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "../cssFile/Home.css";
 import Product from "./Product"
 function Home() {
+
+  const[cart, setCart] = useState([]);
+
+  const handleClick = (item) =>{
+    cart.push(item)
+    console.log(cart)
+  }
   return (
     <div className="home">
         <div className="home-container">
@@ -13,7 +20,8 @@ function Home() {
               title= 'The lean Startup' 
               price = {29.99} 
               rating={2}
-              image= "https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"/>
+              image= "https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"
+              handleClick = {handleClick}/>
               <Product 
               title= "Upgrade your grooming routine with our top-quality shaving essentials and experience a clean and comfortable shave."
               price = {134.99} 
